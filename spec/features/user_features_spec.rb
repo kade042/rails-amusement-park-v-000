@@ -57,6 +57,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     expect(current_path).to eq('/users/new')
     admin_signup
     expect(current_path).to eq('/users/1')
+
     expect(page).to have_content("Walt Disney")
     expect(page).to have_content("ADMIN")
   end
@@ -181,6 +182,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
 
   it "has links on the attractions index page to the attractions' show pages" do
     click_link('See attractions')
+
     expect(page).to have_content("Go on #{@ferriswheel.name}")
     expect(page).to have_content("Go on #{@rollercoaster.name}")
   end
@@ -216,6 +218,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     click_link('See attractions')
     click_link("Go on #{@ferriswheel.name}")
     click_button("Go on this ride")
+
     expect(page).to have_content("Tickets: 13")
   end
 

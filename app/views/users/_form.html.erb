@@ -1,0 +1,41 @@
+<%= form_for set_user(@user), as: :user  do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label "How nauseous are you? (1-5 scale)"%><br />
+    <%= f.text_field :nausea, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "How happy are you? (1-5 scale)"%><br />
+    <%= f.text_field :happiness, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "How many tickets do you have?"%><br />
+    <%= f.text_field :tickets, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Height (in inches)"%><br />
+    <%= f.text_field :height, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Check box only(admin)" %>:
+    <%= f.check_box :admin, value: true, autofocus: true %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create User" %>
+  </div>
+<% end %>

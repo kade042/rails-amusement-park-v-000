@@ -23,10 +23,28 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+
            <!--  nav here -->
+            <% if current_user %>
+             <li class="navbar-brand"> Hi, <%= current_user.name %></li>
+             <li><%= link_to "attractions", attractions_path %></li>
+             <li><%= link_to "Log Out", logout_path %></li>
+            <%else%>
+              <li><%= link_to "Sign up", new_user_path %></li>
+              <li><%= link_to "Sign in", signin_path %></li>
+            <%end%>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
+    </div>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
     </div>
 
     <!-- content -->

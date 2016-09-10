@@ -1,0 +1,12 @@
+<div class="page-header"><h1>Show</h1></div>
+<div class="field">
+  <% if current_user.admin? %>
+    ADMIN
+  <%end%>
+  Mood: <%= current_user.mood%><br />
+  Height: <%= current_user.height%><br />
+  Tickets: <%= current_user.tickets%><br />
+  Nausea: <%= current_user.nausea%><br />
+</div>
+<%= link_to 'Edit', edit_user_path %> |
+<%= link_to 'See attractions', attractions_path %>

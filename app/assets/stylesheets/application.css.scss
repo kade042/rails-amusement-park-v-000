@@ -23,3 +23,11 @@ body {
   padding-top: 70px;
   padding-bottom: 30px;
 }
+
+.alert-alert {
+  @extend .alert-warning;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
